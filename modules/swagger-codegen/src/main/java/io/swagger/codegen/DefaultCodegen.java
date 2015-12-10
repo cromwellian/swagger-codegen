@@ -149,7 +149,7 @@ public class DefaultCodegen {
     // override with any special text escaping logic
     @SuppressWarnings("static-method")
     public String escapeText(String input) {
-        if (input != null) { 
+        if (input != null) {
             input = input.trim(); // FIXME: a parameter should not be assigned. Also declare the methods parameters as 'final'.
             String output = input.replaceAll("\n", "\\\\n");
             output = output.replace("\r", "\\r");
@@ -295,7 +295,7 @@ public class DefaultCodegen {
 
     /**
      * Return the file name of the Api Test
-     * 
+     *
      * @param name the file name of the Api
      * @return the file name of the Api
      */
@@ -324,15 +324,27 @@ public class DefaultCodegen {
     }
 
     /**
+     * Return a template-file context specific version of the model filename
+     * for scenarios where multiple files are generated per model.
+     *
+     * @param templateFilename the name of the mustache file being processed
+     * @param name the model name
+     * @return the file name of the model
+     */
+    public String toModelFilename(String templateFilename, String name) {
+        return toModelFilename(name);
+    }
+
+    /**
      * Return the capitalized file name of the model test
-     * 
+     *
      * @param name the model name
      * @return the file name of the model
      */
     public String toModelTestFilename(String name) {
         return initialCaps(name) + "Test";
     }
-    
+
     /**
      * Return the operation ID (method name)
      * 
@@ -591,7 +603,7 @@ public class DefaultCodegen {
      * @param p Swagger property object
      * @return string presentation of the example value of the property
      */
-    @SuppressWarnings("static-method") 
+    @SuppressWarnings("static-method")
     public String toExampleValue(Property p) {
         if(p.getExample() != null) {
             return p.getExample().toString();
@@ -677,7 +689,7 @@ public class DefaultCodegen {
             return "null";
         }
     }
-    
+
     /**
      * Return the property initialized from a data object
      * Useful for initialization with a plain object in Javascript

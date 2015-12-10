@@ -110,7 +110,9 @@ public interface CodegenConfig {
     String toApiTestFilename(String name);
 
     String toModelTestFilename(String name);
-    
+
+    String toModelFilename(String templateFilename, String name);
+
     String toModelImport(String name);
 
     String toApiImport(String name);
