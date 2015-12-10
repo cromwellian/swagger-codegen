@@ -281,6 +281,18 @@ public class DefaultCodegen {
     }
 
     /**
+     * Return a template-file context specific version of the model filename
+     * for scenarios where multiple files are generated per model.
+     *
+     * @param templateFilename the name of the mustache file being processed
+     * @param name the model name
+     * @return the file name of the model
+     */
+    public String toModelFilename(String templateFilename, String name) {
+        return toModelFilename(name);
+    }
+
+    /**
      * Return the operation ID (method name)
      * 
      * @param operationId operation ID
