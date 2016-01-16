@@ -41,6 +41,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class DefaultGenerator extends AbstractGenerator implements Generator {
     Logger LOGGER = LoggerFactory.getLogger(DefaultGenerator.class);
