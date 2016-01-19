@@ -785,7 +785,6 @@ public class DefaultCodegen {
         m.externalDocs = model.getExternalDocs();
         m.vendorExtensions = model.getVendorExtensions();
 
-
         if (model instanceof ArrayModel) {
             ArrayModel am = (ArrayModel) model;
             ArrayProperty arrayProperty = new ArrayProperty(am.getItems());
@@ -913,7 +912,7 @@ public class DefaultCodegen {
         property.defaultValueWithParam = toDefaultValueWithParam(name, p);
         property.jsonSchema = Json.pretty(p);
         property.isReadOnly = p.getReadOnly();
-        property.vendorExtensions = p.getVendorExtensions();
+        property.vendorExtensions =p.getVendorExtensions();
 
         String type = getSwaggerType(p);
         if (p instanceof AbstractNumericProperty) {
